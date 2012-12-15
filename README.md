@@ -54,3 +54,11 @@ Resumes paused animation.
 StaticGen.resume();
 </code>
 </pre>
+
+Examples
+--------
+### Interactive Playground
+[https://github.com/criography/StaticGen/blob/master/example/playground.html](http://htmlpreview.github.com/?https://github.com/criography/StaticGen/blob/master/example/playground.html)
+
+### a little something with some CSS3 goodness
+[https://github.com/criography/StaticGen/blob/master/example/tv.html](http://htmlpreview.github.com/?https://github.com/criography/StaticGen/blob/master/example/tv.html)
