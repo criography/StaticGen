@@ -4,7 +4,7 @@ Static/Noise Canvas Generator
 A rather pointless (though perhaps someone will have a need for such a thing one day) simple 2KB library allowing you to add a old TV like noise/static effect through a canvas. It uses offscreen prerendering and tiling for increased performance.
 
 ###### Please note: it will be applied to only one element—first child of a given selector query.
-###### Please note 2: the contents of the container elements will be inserted into <canvas> tag as a fallback in case something went terribly wrong.
+###### Please note 2: the contents of the container elements will be inserted into canvas tag as a fallback in case something went terribly wrong.
 
 
 Usage
