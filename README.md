@@ -63,3 +63,7 @@ Examples
 
 ### a little something with some CSS3 goodness
 [https://github.com/criography/StaticGen/blob/master/example/tv.html](http://htmlpreview.github.com/?https://github.com/criography/StaticGen/blob/master/example/tv.html)
+
+Credits
+--------
+Photo used in TV example was taken by [pj_in_oz](http://www.flickr.com/photos/pj_in_oz/2966981750/)
