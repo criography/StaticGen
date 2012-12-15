@@ -8,6 +8,7 @@ A simple 2KB library allowing you to add a old TV like noise/static effect throu
 
 Usage
 -----
+<pre>
 <code>
 StaticGen.init('#selector', {
 	width         : 0,      /* main canvas width. Defaults to container width */
@@ -24,26 +25,32 @@ StaticGen.init('#selector', {
 	randomizeRows : true    /* should each row be randomly offset by a fraction of {pixelWidth}? */
 });
 </code>
-
+</pre>
 ## Methods
 
 ### Redraw
 Redraws the canvas using a new set of options without interfering with the DOM.
+<pre>
 <code>
-	StaticGen.redraw({
-		tileWidth     : 300,
-		tileHeight    : 100
-	});
+StaticGen.redraw({
+	tileWidth   : 300,
+	tileHeight  : 100
+});
 </code>
+</pre>
 
 ### Pause
 Pause the animation.
+<pre>
 <code>
  StaticGen.pause();
 </code>
+</pre>
 
 ### Pause
 Resumes paused animation.
+<pre>
 <code>
 StaticGen.resume();
 </code>
+</pre>
