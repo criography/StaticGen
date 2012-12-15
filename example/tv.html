@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TV StaticGen Demo</title>
+  <link rel="stylesheet" type="text/css" href="css/com.criography.staticGen.css">
+</head>
+<body>
+
+  <div id="room">
+    <div id="screenWrapper">
+      Fallback Text
+    </div>
+  </div>
+  
+  <script src="../lib/com.criography.staticGen.min.js"></script>
+  <script>
+
+    StaticGen.init('#screenWrapper', {
+      width       : 308,
+      height      : 249,
+      tileWidth   : 100,
+      tileHeight  : 249,
+      totalFrames : 5,
+      fps         : 8,
+      pixelWidth  : 2,
+      pixelHeight : 2,
+      stretchH    : 'fit',
+      stretchV    : 1,
+      scanLines   : true
+    } );
+
+  </script>
+</body>
+</html>

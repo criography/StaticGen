@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Interactive StaticGen Demo</title>
+	<style>
+		#screenWrapper{
+			width:800px;
+			height:400px;
+			background:#000;
+			margin-bottom:2em;
+		}
+
+			fieldset{
+				width:250px;
+				border:0;
+				margin:0;
+				padding:0;
+				display: inline-block;
+				vertical-align: top;
+			}
+
+				label, button{
+					display:block;
+					margin-bottom:.5em;
+				}
+
+
+
+				span{
+					display:inline-block;
+					width:45%;
+				}
+
+				fieldset:first-child span{
+					width:35%;
+				}
+
+				input[type="text"]{
+					width:4em;
+				}
+	</style>
+</head>
+<body>
+  <div id="screenWrapper">
+    fallback content
+  </div>
+
+	<form id="controls">
+		<fieldset>
+		  <label for="tileWidth"><span>tileWidth:</span><input id="tileWidth" type="text" value="200" /></label>
+		  <label for="tileHeight"><span>tileHeight:</span><input id="tileHeight" type="text" value="201" /></label>
+
+		  <label for="pixelWidth"><span>pixelWidth:</span><input id="pixelWidth" type="text" value="2" /></label>
+		  <label for="pixelHeight"><span>pixelHeight:</span><input id="pixelHeight" type="text" value="2" /></label>
+
+		  <label for="stretchH"><span>stretchH:</span><input id="stretchH" type="text" value="8" /></label>
+		  <label for="stretchV"><span>stretchV:</span><input id="stretchV" type="text" value="1" /></label>
+		</fieldset>
+
+		<fieldset>
+			<label for="totalFrames"><span>totalFrames:</span><input id="totalFrames" type="text" value="4" /></label>
+			<label for="fps"><span>fps:</span><input id="fps" type="text" value="8" /></label>
+
+		  <label for="scanLines"><span>scanLines:</span><input id="scanLines" type="checkbox" checked="checked" /></label>
+		  <label for="randomizeRows"><span>randomizeRows:</span><input id="randomizeRows" type="checkbox" checked="checked" /></label>
+
+		  <button id="pause">PAUSE</button>
+		  <button id="resume">RESUME</button>
+		</fieldset>
+	</form>
+
+  <script src="../lib/com.criography.staticGen.min.js"></script>
+  <script>
+	  /* init */
+    StaticGen.init('#screenWrapper', {
+	    tileWidth     : 200,				/* unique tile width */
+	    tileHeight    : 201,				/* unique tile height */
+	    totalFrames   : 4,					/* number of total static frames */
+	    fps           : 8,		      /* errr… number of frames per second? */
+	    pixelWidth    : 2,					/* single static grain width */
+	    pixelHeight   : 2,					/* single static grain height */
+	    stretchH      : 8,					/* amount of horizontal stretching applied to each static grain. Possible options: 'fit' to fit container width or int>1 */
+	    stretchV      : 1,					/* amount of vertical stretching applied to each static grain. Possible options: 'fit' to fit container width or int>1 */
+	    scanLines     : true,			  /* leave a 1px high gap between {pixelHeight}px pixel rows */
+	    randomizeRows : true				/* should each row be randomly offset by a fraction of {pixelWidth}? */
+    });
+
+
+    /* invoke redraw method */
+	  for(var i in inputs = document.querySelectorAll('input')){
+		  if(inputs.hasOwnProperty(i)){
+
+		    inputs[i].onchange = function(){
+
+			    StaticGen.redraw({
+						tileWidth     : parseInt(getEl('tileWidth').value, 10),
+						tileHeight    : parseInt(getEl('tileHeight').value, 10),
+						totalFrames   : parseInt(getEl('totalFrames').value, 10),
+						fps           : parseInt(getEl('fps').value, 10),
+						pixelWidth    : parseInt(getEl('pixelWidth').value, 10),
+						pixelHeight   : parseInt(getEl('pixelHeight').value, 10),
+						stretchH      : parseInt(getEl('stretchH').value, 10),
+						stretchV      : parseInt(getEl('stretchV').value, 10),
+						scanLines     : getEl('scanLines').checked,
+						randomizeRows : getEl('randomizeRows').checked
+			    });
+
+		    }
+
+		  }
+	  }
+
+		/* invoke pause method */
+    getEl('pause').onclick=function(){
+	    StaticGen.pause();
+	    return false;
+    };
+
+		/* invoke resume method */
+    getEl('resume').onclick=function(){
+	    StaticGen.resume();
+	    return false;
+    };
+
+		/* getElementById helper */
+	  function getEl(selector){
+		  return document.getElementById(selector);
+	  }
+
+  </script>
+</body>
+</html>
