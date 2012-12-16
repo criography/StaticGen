@@ -36,16 +36,6 @@ body, html {
 			overflow: hidden;
 		}
 
-			#screenWrapper:after {
-				content: "";
-				width: 238px;
-				height: 265px;
-				position: absolute;
-				top: 0;
-				left: 0;
-				background: transparent url(../images/tv-set-inner.png) no-repeat 0 0;
-			}
-
 			#screenWrapper:before {
 				-webkit-transform: skewY(6.5deg) rotateY(-26deg);
 				-moz-transform: skewY(6.5deg) rotateY(-26deg);
@@ -64,7 +54,19 @@ body, html {
 				top: 0;
 				width: 91%;
 				box-shadow: inset 20px 20px 60px rgba(0, 0, 0, .7), inset -20px -20px 60px rgba(0, 0, 0, .7);
-				z-index: 2;
+				z-index: 1;
+			}
+
+
+			#screenWrapper:after {
+				content: "";
+				width: 238px;
+				height: 265px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: transparent url(../images/tv-set-inner.png) no-repeat 0 0;
+				z-index:2;
 			}
 
 				.static {
